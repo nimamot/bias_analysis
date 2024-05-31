@@ -17,13 +17,22 @@
       href="{{url_for('static', filename='style.css')}}"
     />
 
-    <title>Moment type predictor</title>
+    <title>Bias Exploration</title>
   </head>
 
   <body>
+    <div class="top-section d-flex align-items-center justify-content-center">
+  <h1>Bias Detection</h1>
+</div>
+<div class="middle-section">
+    <div class="container mt-5">
     <div class="container m-1">
       <!-- <h2> Your Moment: {{session['Moment']}} </h2> -->
+      <div class="form-group">
       <h3>{{results}}</h3>
+         </div>
     </div>
+  </div>
+  </div>
   </body>
 </html>

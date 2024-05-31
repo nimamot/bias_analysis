@@ -17,25 +17,47 @@
       href="{{url_for('static', filename='style.css')}}"
     />
 
-    <title>Bias exploration</title>
+    <title>Bias Exploration</title>
   </head>
 
   <body>
-    <div class="container m-1">
-      <h1>Bias detection</h1>
-      <h3 class="mb-4">
-        Explore whether there are any biases or stereotypes present in
-        glove_wiki_vectors embeddings.
-      </h3>
-      <h3 class="mb-4">
-        return the word that has the same relation with w3 that w2 has with w1.
-        eg: man, doctor, woman?
-      </h3>
-      <form method="POST">
-        {# This hidden_tag is a CSRF security feature. #} {{ form.hidden_tag()}}
-        {{ form.text.label }} {{form.text}} {{ form.text2.label }}
-        {{form.text2}} {{ form.text3.label }} {{form.text3}} {{ form.submit() }}
-      </form>
+    <div class="top-section d-flex align-items-center justify-content-center">
+      <h1>Bias Detection</h1>
     </div>
+
+    <div class="middle-section">
+      <div class="container mt-5">
+        <form method="POST">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+            {{ form.text.label(class="d-block") }} {{
+            form.text(class="form-control mb-3") }}
+          </div>
+          <div class="form-group">
+            {{ form.text2.label(class="d-block") }} {{
+            form.text2(class="form-control mb-3") }}
+          </div>
+          <div class="form-group">
+            {{ form.text3.label(class="d-block") }} {{
+            form.text3(class="form-control mb-3") }}
+          </div>
+          {{ form.submit(class="btn btn-primary") }}
+        </form>
+      </div>
+    </div>
+    <center>
+      <div class="bottom-section">
+        <div class="container mt-5">
+          <p class="mb-4">
+            Explore whether there are any biases or stereotypes present in
+            glove_wiki_vectors embeddings.
+          </p>
+          <p class="mb-4">
+            Return the word that has the same relation with w3 that w2 has with
+            w1. eg: man, doctor, woman?
+          </p>
+        </div>
+      </div>
+    </center>
   </body>
 </html>

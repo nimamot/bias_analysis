@@ -23,9 +23,9 @@ model = joblib.load('bias.joblib')
 # 5. create a WTForm Class
 class PredictForm(FlaskForm):
     print('predictform')
-    text = StringField("w1")
-    text2 = StringField("w2")
-    text3 = StringField("w3")
+    text = StringField("Word 1")
+    text2 = StringField("Word 2")
+    text3 = StringField("word 3")
 
     submit = SubmitField("Predict")
 
